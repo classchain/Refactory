@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fa="کلاس‌چِین | آینده کودکان ایران را با شفافیت بسازیم" data-en="ClassChain | Building Iran's Future with Transparency">
+        کلاس‌چِین
+    </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="frontend/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div class="hexagon-grid"></div>
+
+    <!-- سوئیچ زبان -->
+    <div class="lang-switch desktop-lang">
+        <button class="active" onclick="setLang('fa')">فارسی</button>
+        <button onclick="setLang('en')">English</button>
+    </div>
+
+    <!-- منوبار -->
+    <nav class="navbar">
+        <div class="navbar-brand" data-fa="کلاس‌چِین" data-en="ClassChain">کلاس‌چِین</div>
+        
+        <button class="menu-toggle" aria-label="باز کردن منو">
+			<svg viewBox="0 0 100 100">
+				<rect class="line top" x="10" y="20" width="80" height="8" rx="4" fill="white"/>
+				<rect class="line mid" x="10" y="46" width="80" height="8" rx="4" fill="white"/>
+				<rect class="line bot" x="10" y="72" width="80" height="8" rx="4" fill="white"/>
+			</svg>
+		</button>
+        
+        <div class="nav-links">
+			<div class="lang-switch mobile-lang">
+				<button class="active" onclick="setLang('fa')">فارسی</button>
+				<button onclick="setLang('en')">English</button>
+			</div>
+			
+            <a href="#" data-fa="اهداف پروژه" data-en="Project Goals">اهداف پروژه</a>
+            <a href="#" data-fa="White Paper" data-en="White Paper">White Paper</a>
+            <a href="#" data-fa="ارتباط با ما" data-en="Contact Us">ارتباط با ما</a>
+            <a href="#" data-fa="درباره ما" data-en="About Us">درباره ما</a>
+        </div>
+    </nav>
+	<!-- سوئیچ زبان دسکتاپ — همون قدیمی، خارج از navbar -->
+	<div class="lang-switch desktop-lang">
+		<button class="active" onclick="setLang('fa')">فارسی</button>
+		<button onclick="setLang('en')">English</button>
+	</div>
+    <!-- محتوای اصلی -->
+    <div class="hero">
+        <h1 class="hero-title" data-fa="هر کودکی شایسته‌ی کلاس امن است" data-en="Every Child Deserves a Safe Classroom">
+            هر کودکی شایسته‌ی کلاس امن است
+        </h1>
+
+        <p class="hero-subtitle" data-fa="کلاس‌چِین اولین پلتفرم شفاف مدرسه‌سازی با بلاکچین در جهان است.<br>هر کمک شما مستقیم و قابل ردیابی به کودکان نیازمند می‌رسد."
+                          data-en="ClassChain is the world's first fully transparent school-building platform on blockchain.<br>Every donation is direct, trackable, and reaches children in need.">
+            کلاس‌چِین اولین پلتفرم شفاف مدرسه‌سازی با بلاکچین در جهان است.<br>هر کمک شما مستقیم و قابل ردیابی به کودکان نیازمند می‌رسد.
+        </p>
+
+        <div class="buttons">
+            <a href="frontend/WebGIS.html" class="btn btn-primary" data-fa="مشاهده نقشه پروژه‌ها" data-en="View Project Map">
+                مشاهده نقشه پروژه‌ها
+            </a>
+            <a href="frontend/WebGIS-Old.html" class="btn btn-outline" data-fa="حمایت مالی" data-en="Donate Now">
+                حمایت مالی
+            </a>
+        </div>
+    </div>
+
+    <footer data-fa="© کلاس‌چِین توسط مهندس آرش مردانی با Grok در سال ۱۴۰۴ بنیاد نهاده شد — آینده آموزش ایران را با هم بسازیم"
+            data-en="© The ClassChain was founded by En. Arash Mardani with Grok in the year 2025.">
+        © ۱۴۰۴ کلاس‌چِین — آینده آموزش ایران را با هم بسازیم
+    </footer>
+
+    <script src="frontend/js/script.js"></script>
+</body>
+</html>
+
