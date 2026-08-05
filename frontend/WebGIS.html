@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS ایران - بر اساس سرانه جمعیت + پروژه‌های آموزشی</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="css/Style-GIS.css">
+</head>
+<body>
+    <div class="container">
+        <!-- پنل اطلاعات -->
+        <div class="info-panel" id="infoPanelWrapper">
+            <div class="panel-header">
+                <h1>WebGIS ایران</h1>
+                <p>رنگ بر اساس سرانه جمعیت + پروژه‌های آموزشی</p>
+                <button class="close-btn" id="closePanel" aria-label="بستن پنل">×</button>
+            </div>
+            <div class="panel-content" id="infoPanel">
+                <div class="no-selection">
+                    <div class="icon">🗺️</div>
+                    <h3>یک مورد را انتخاب کنید</h3>
+                    <p>روی استان، شهرستان یا پروژه کلیک کنید</p>
+                </div>
+            </div>
+            <div class="fixed-contribute-button" id="fixedContributeBtn">
+                <button onclick="redirectToDonate(currentProjectId)">
+                    مشارکت در ساخت
+                </button>
+                <p>(انتخاب شبکه و پرداخت با کیف پول)</p>
+            </div>
+        </div>
+
+        <!-- نقشه -->
+        <div id="map"></div>
+    </div>
+
+    <!-- کنترل‌های نقشه -->
+    <div class="custom-basemap-selector">
+        <select id="basemapSelect" onchange="changeBasemap(this.value)">
+            <option value="carto">رنگارنگ و سریع (پیش‌فرض)</option>
+            <option value="persiangis">نقشه فارسی (PersianGIS)</option>
+            <option value="satellite">ماهواره‌ای (Esri)</option>
+            <option value="light">خاکستری روشن</option>
+            <option value="osm">استاندارد (OSM)</option>
+        </select>
+    </div>
+
+    <div class="home-button" onclick="zoomToIran()" title="بازگشت به ایران">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <script src="js/network-config.js"></script>
+    <script src="js/raised-reader.js"></script>
+    <script src="js/Script-GIS.js"></script>
+</body>
+</html>

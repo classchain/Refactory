@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشارکت در پروژه - کلاس‌چین</title>
+
+    <!-- فونت‌ها -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- استایل اصلی -->
+    <link rel="stylesheet" href="css/donate.css">
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- QR Code -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <!-- Web3 -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div class="hexagon-grid"></div>
+
+    <!-- سوئیچ زبان -->
+    <div class="lang-switch">
+        <button class="active" onclick="setLang('fa')">فارسی</button>
+        <button onclick="setLang('en')">English</button>
+    </div>
+
+    <!-- نوار ناوبری -->
+    <nav class="navbar">
+        <div class="navbar-brand">کلاس‌چین</div>
+        <div class="nav-links">
+            <a href="../index.html">خانه</a>
+            <a href="../WebGIS.html">نقشه پروژه‌ها</a>
+            <a href="#">درباره ما</a>
+            <a href="#">ارتباط با ما</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="card">
+            <div class="main-content">
+                <h1 id="projectTitle">در حال بارگذاری پروژه...</h1>
+                <p id="projectDesc"></p>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">در حال بارگذاری...</p>
+                </div>
+
+                <div class="donation-section">
+                    <h2>مبلغ مشارکت (USDT)</h2>
+                    <input type="number" id="customAmount" placeholder="مبلغ دلخواه" min="1">
+                </div>
+
+                <div class="network-selector">
+                    <h2>انتخاب شبکه</h2>
+                    <select id="networkSelect" onchange="selectNetwork(this.value)"></select>
+                </div>
+
+                <div class="wallet-info" id="walletInfo" style="display:none;">
+                    <p>آدرس کیف پول شما: <span id="userAddress"></span></p>
+                </div>
+
+                <div class="qr-section" id="qrSection" style="display:none;">
+                    <h3>اسکن QR برای پرداخت (TRON)</h3>
+                    <div id="qrcode"></div>
+                </div>
+
+                <div class="terms">
+                    <label>
+                        <input type="checkbox" id="termsConsent">
+                        با شرایط و ضوابط موافقم
+                    </label>
+                </div>
+
+                <!-- ✅ چک‌باکس جدید اضافه شده -->
+                <div class="infinite-approve" style="margin: 15px 0;">
+                    <label>
+                        <input type="checkbox" id="infiniteApprove" checked>
+                        اجازه برداشت دائمی (برای کمک‌های بعدی نیازی به approve دوباره نیست)
+                    </label>
+                </div>
+
+                <button class="connect-btn" id="connectBtn" disabled>اتصال کیف پول و پرداخت</button>
+
+                <div class="success-message" id="successMessage" style="display:none;">
+                    <h3>✅ پرداخت با موفقیت انجام شد!</h3>
+                    <p id="txHash"></p>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="project-image" id="projectImage">
+                    <img src="https://via.placeholder.com/400x300?text=تصویر+پروژه" alt="تصویر پروژه">
+                </div>
+                <div class="donors-list" id="donorsList">
+                    <p>در حال بارگذاری کمک‌کنندگان...</p>
+                </div>
+                <div class="email-subscribe">
+                    <h3>دریافت آپدیت پروژه</h3>
+                    <input type="email" id="donorEmail" placeholder="ایمیل شما">
+                    <label><input type="checkbox" id="consent">موافقم آپدیت دریافت کنم</label>
+                    <button onclick="saveEmail()">ثبت ایمیل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اسکریپت‌های پرداخت و کیف پول -->
+    <script src="js/network-config.js"></script>
+    <script src="js/wallet-manager.js"></script>
+    <script src="js/raised-reader.js"></script>
+    <script src="js/donate.js"></script>
+</body>
+</html>
